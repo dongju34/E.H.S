@@ -1,6 +1,7 @@
 package com.example.ehs;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -107,8 +108,15 @@ public class DashFragment extends Fragment {
             }
         });
 
-        // 이 부분에 주어진 코드를 추가합니다.
-        // ...
+        // View button = findViewById(R.id.button); 및 클릭 리스너 설정 추가
+        Button button = view.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), add2.class); // getActivity()를 사용하여 액티비티를 가져옵니다.
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
